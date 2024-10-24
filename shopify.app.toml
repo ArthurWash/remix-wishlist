@@ -3,7 +3,7 @@
 client_id = "03768483c20eb7675abf359200d337fc"
 name = "remix-wishlist"
 handle = "remix-wishlist-5"
-application_url = "https://contributor-territory-experienced-calculators.trycloudflare.com"
+application_url = "https://prevent-eg-centered-ave.trycloudflare.com"
 embedded = true
 
 [build]
@@ -19,7 +19,10 @@ redirect_urls = [
   "https://example.com/api/auth",
   "https://contributor-territory-experienced-calculators.trycloudflare.com/auth/callback",
   "https://contributor-territory-experienced-calculators.trycloudflare.com/auth/shopify/callback",
-  "https://contributor-territory-experienced-calculators.trycloudflare.com/api/auth/callback"
+  "https://contributor-territory-experienced-calculators.trycloudflare.com/api/auth/callback",
+  "https://prevent-eg-centered-ave.trycloudflare.com/auth/callback",
+  "https://prevent-eg-centered-ave.trycloudflare.com/auth/shopify/callback",
+  "https://prevent-eg-centered-ave.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
