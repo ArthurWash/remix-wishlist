@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "03768483c20eb7675abf359200d337fc"
+name = "remix-wishlist"
+handle = "remix-wishlist-5"
+application_url = "https://contributor-territory-experienced-calculators.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "amy-rose-picklist.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://example.com/api/auth",
+  "https://contributor-territory-experienced-calculators.trycloudflare.com/auth/callback",
+  "https://contributor-territory-experienced-calculators.trycloudflare.com/auth/shopify/callback",
+  "https://contributor-territory-experienced-calculators.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
