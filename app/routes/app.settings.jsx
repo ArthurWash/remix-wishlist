@@ -16,10 +16,35 @@ import {
 } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
 import { useState } from "react";
+import { json } from "@remix-run/node";
+import { useLoaderData, Form} from "@remix-run/react";
+
+export async function loader() {
+  // provides data to the component
+  // get data from database
+  let settings = {
+    name: "My App updated",
+    description: "My app description",
+  
+    // Don't forget the form has to have a name attribute to be able to be submitted
+  }
+
+  return json(settings);
+}
+
+export async function action({ request }) {
+  // updates persistent data
+  let settings = await request.formData();
+  // convert the form into an object
+  settings = Object.fromEntries(settings);
+
+  return json(settings);
+}
 
 export default function SettingsPage() {
+  const settings = useLoaderData();
 
-  const [formState, setFormState] = useState({});
+  const [formState, setFormState] = useState(settings);
 
   return (
     <Page>
@@ -41,18 +66,20 @@ export default function SettingsPage() {
             </BlockStack>
           </Box>
           <Card roundedAbove="sm">
-            <BlockStack gap="400">
-              {/* The below code simply lets us type into the form. */}
-              <TextField label="App name" value={formState.name} onChange={(value) => setFormState({ ...formState, name: value })}/>
-                {/* value={formState.name} sets the value to name property. 
-                  onChange/setFormState defines an event handler for when the textfield's value changes. 
-                  The function takes the new value as an argument and updates the formState object using setFormState function. 
-                  The spread operator (...formState) ensure that the other properties in formState remain unchanged, while the name property is updated.
-                  */}
-              <TextField label="Description" value={formState.description} onChange={(value) => setFormState({ ...formState, description: value })} />
+            <Form method="POST">
+              <BlockStack gap="400">
+                {/* The below code simply lets us type into the form. */}
+                <TextField label="App name" name="name" value={formState.name} onChange={(value) => setFormState({ ...formState, name: value })}/>
+                  {/* value={formState.name} sets the value to name property. 
+                    onChange/setFormState defines an event handler for when the textfield's value changes. 
+                    The function takes the new value as an argument and updates the formState object using setFormState function. 
+                    The spread operator (...formState) ensure that the other properties in formState remain unchanged, while the name property is updated.
+                    */}
+                <TextField label="Description" name="description" value={formState.description} onChange={(value) => setFormState({ ...formState, description: value })} />
 
-              <Button submit={true}>Save</Button>
-            </BlockStack>
+                <Button submit={true}>Save</Button>
+              </BlockStack>
+            </Form>
           </Card>
         </InlineGrid>
       </BlockStack>

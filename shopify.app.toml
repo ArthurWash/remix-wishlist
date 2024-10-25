@@ -3,7 +3,7 @@
 client_id = "03768483c20eb7675abf359200d337fc"
 name = "remix-wishlist"
 handle = "remix-wishlist-5"
-application_url = "https://prevent-eg-centered-ave.trycloudflare.com"
+application_url = "https://shopzilla-relating-landscapes-berkeley.trycloudflare.com"
 embedded = true
 
 [build]
@@ -22,7 +22,13 @@ redirect_urls = [
   "https://contributor-territory-experienced-calculators.trycloudflare.com/api/auth/callback",
   "https://prevent-eg-centered-ave.trycloudflare.com/auth/callback",
   "https://prevent-eg-centered-ave.trycloudflare.com/auth/shopify/callback",
-  "https://prevent-eg-centered-ave.trycloudflare.com/api/auth/callback"
+  "https://prevent-eg-centered-ave.trycloudflare.com/api/auth/callback",
+  "https://morrison-landscape-downloading-block.trycloudflare.com/auth/callback",
+  "https://morrison-landscape-downloading-block.trycloudflare.com/auth/shopify/callback",
+  "https://morrison-landscape-downloading-block.trycloudflare.com/api/auth/callback",
+  "https://shopzilla-relating-landscapes-berkeley.trycloudflare.com/auth/callback",
+  "https://shopzilla-relating-landscapes-berkeley.trycloudflare.com/auth/shopify/callback",
+  "https://shopzilla-relating-landscapes-berkeley.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
